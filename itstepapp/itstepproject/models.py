@@ -34,3 +34,17 @@ class Job(models.Model):
     
     def __str__(self):
         return self.title
+
+class Vacancy(models.Model):
+    title = models.CharField("Заголовок", max_length=255)
+    description = models.TextField()
+    company = models.CharField("Название компании", max_length=100)
+    location = models.CharField("Место работы", max_length=100)
+    date_posted = models.DateTimeField(auto_now_add=True)
+    
+    class Meta:
+        verbose_name = "Вакансия(2)"
+        verbose_name_plural = "Вакансии(2)"
+
+    def __str__(self):
+        return self.title
